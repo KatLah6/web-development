@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3 Calculator with text box and increment/decrement buttons</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="calculator_task_6_3.js"></script>
+</head>
+<body>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f9;
+    }
+    
+    .container {
+        text-align: center;
+    }
+    
+    h2 {
+        margin-bottom: 20px;
+    }
+    
+    .calculator {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+    }
+    
+    input[type="number"], select, button {
+        padding: 6px;
+        font-size: 14px;
+        width: 60px;
+        text-align: center;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+    
+    button {
+        cursor: pointer;
+    }
+    
+    #result {
+        font-weight: bold;
+        font-size: 16px;
+    }
+    </style> 
+
+    <div class="container">
+        <h2>Calculator</h2>
+        <div class="calculator">
+            <!-- First number with increment/decrement buttons -->
+            <button onclick="decrement('num1')">⬇️</button>
+            <input type="number" id="num1" value="0" readonly>
+            <button onclick="increment('num1')">⬆️</button>
+
+            <!-- Operation selection -->
+            <select id="operation">
+                <option value="add">+</option>
+                <option value="subtract">-</option>
+                <option value="multiply">×</option>
+                <option value="divide">÷</option>
+            </select>
+
+            <!-- Second number with increment/decrement buttons -->
+            <button onclick="decrement('num2')">⬇️</button>
+            <input type="number" id="num2" value="0" readonly>
+            <button onclick="increment('num2')">⬆️</button>
+
+            <!-- Calculate button and result display -->
+            <button onclick="calculate()">=</button>
+            <span id="result">0</span>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
